@@ -21,8 +21,6 @@ export default function Home() {
   });
   const { errors } = formState;
 
-  console.log(errors);
-
   const handleSignIn: SubmitHandler<SignInFormData> = async (formData) => {
     await new Promise(resolve => setTimeout(resolve, 2000))
     console.log(formData)
@@ -44,6 +42,7 @@ export default function Home() {
         borderRadius={8}
         flexDir="column"
         onSubmit={handleSubmit(handleSignIn)}
+        noValidate
       >
         <Stack spacing="4">
           <Input
